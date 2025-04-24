@@ -19,5 +19,8 @@ Config files (as well as other resources used) can be found in their respective 
 # Color Schemes
 I used the Catppuccin (Macchiato) color scheme for most of these. The GitHub repo for this, along with all the other Catppuccin flavors can be found [here](https://github.com/catppuccin).
 
+# Wallpapers
+I mainly use [WallHaven](https://wallhaven.cc/), [Alpha Coders](https://alphacoders.com/), and sometimes Reddit for my walls.
+
 # Credits
 This project makes use of open-source resources. Full credit goes to the original authors.
