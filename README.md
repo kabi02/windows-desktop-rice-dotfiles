@@ -14,3 +14,5 @@ List of apps used for this rice:
 
 Config files (as well as other resources used) can be found in their respective folders within the repository.
 
+# Color Schemes
+I used the Catppuccin (Macchiato) color scheme for most of these. The GitHub repo for this, along with all the other Catppuccin flavors can be found [here](https://github.com/catppuccin).
