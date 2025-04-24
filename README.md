@@ -1,5 +1,5 @@
 # Windows 10 Desktop Rice
-Config files for my Windows 10 desktop rice
+Config files for my Windows 10 desktop rice. This just serves as a personal repository in case I transfer to a new system. But feel free to use these if you want.
 
 # Tools Used
 List of apps used for this rice:
