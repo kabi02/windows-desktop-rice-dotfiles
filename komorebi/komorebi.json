@@ -3,17 +3,33 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
-  "default_workspace_padding": 1,
-  "default_container_padding": 1,
+  "default_workspace_padding": 3,
+  "default_container_padding": 3,
   "border": true,
   "border_width": 3,
-  "border_offset": -1,
-  "mouse_follows_focus": false,
+  "border_offset": 0,
+  "mouse_follows_focus": true,
   "theme": {
     "palette": "Base16",
     "name": "Ashes",
     "unfocused_border": "Base03",
     "bar_accent": "Base0D"
+  },
+
+  "stackbar":
+  {
+    "height": 20,
+    "mode": "OnStack",
+    "label": "Title",
+    "tabs": 
+    {
+      "width": 250,
+      "focused_text": "#c6a0f6",
+      "unfocused_text": "#b7bdf8",
+      "background": "#181926",
+      "font_family": "JetBrainsMono NFP",
+      "font_size": 14
+    }
   },
 
   "animation": 
@@ -60,6 +76,11 @@
       "kind": "Exe",
       "id": "osu!.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Photoshop.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "monitors": [
@@ -83,14 +104,6 @@
         },
         {
           "name": "V",
-          "layout": "Grid"
-        },
-        {
-          "name": "VI",
-          "layout": "Grid"
-        },
-        {
-          "name": "VII",
           "layout": "Grid"
         }
       ]

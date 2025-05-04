@@ -19,7 +19,7 @@ bars:
       enabled: true
       duration: 1000
     blur_effect:
-      enabled: false
+      enabled: true
       acrylic: false
       dark_mode: false
       round_corners: false
@@ -111,7 +111,7 @@ widgets:
       label: "{win[title]}"
       label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
       label_no_window: ""
-      label_icon: false
+      label_icon: true
       label_icon_size: 14
       max_length: 56
       max_length_ellipsis: "..."
@@ -144,7 +144,7 @@ widgets:
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
-      hide_if_offline: true
+      hide_if_offline: false
       label: "{icon}"
       layouts:
         [
@@ -158,18 +158,18 @@ widgets:
           "right_main_vertical_stack",
         ]
       layout_icons:
-        bsp: "BSP"
-        columns: "COLS"
-        rows: "ROWS"
-        grid: "GRID"
-        vertical_stack: "V-STACK"
-        horizontal_stack: "H-STACK"
-        ultrawide_vertical_stack: "W-STACK"
-        right_main_vertical_stack: "RMV-STACK"
-        monocle: "MONOCLE"
-        maximised: "MAX"
-        floating: "FLOATING"
-        paused: "PAUSED"
+        bsp: "[\\\\]"
+        columns: "[||]"
+        rows: "[==]"
+        grid: "[G]"
+        vertical_stack: "[V]="
+        horizontal_stack: "[H]="
+        ultrawide_vertical_stack: "||="
+        right_main_vertical_stack: "=[V]"
+        monocle: "[M]"
+        maximised: "[X]"
+        floating: "><>"
+        paused: "[P]"
       container_padding:
         top: 0
         left: 8
@@ -214,7 +214,7 @@ widgets:
         - "\uf027"
         - "\uf028"
       callbacks:
-        on_left: "toggle_mute"
+        on_left: "toggle_volume_menu"
         on_right: "exec cmd.exe /c start ms-settings:sound"
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
@@ -280,7 +280,8 @@ widgets:
       min_bar_height: 0
       gradient: 1
       reverse: 0
-      foreground: "#89b4fa"
+      # foreground: "#f5bde6"
+      # foreground: "#89b4fa"
       gradient_color_1: '#74c7ec'
       gradient_color_2: '#89b4fa'
       gradient_color_3: '#cba6f7'
@@ -288,7 +289,7 @@ widgets:
       bar_spacing: 2
       bar_width: 4
       sleep_timer: 2
-      hide_empty: true
+      hide_empty: false
       container_padding:
         top: 0
         left: 0

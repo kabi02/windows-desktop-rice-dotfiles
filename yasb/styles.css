@@ -2,7 +2,7 @@
 This is default and very simple styles file for Yasb. 
 For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
 */
-:root {
+/* :root {
     --rosewater: #f5e0dc;
     --flamingo: #f2cdcd;
     --pink: #f5c2e7;
@@ -30,7 +30,39 @@ For more information about configuration options, please visit the Wiki https://
     --mantle: rgba(24, 24, 37, 0.5);
     --crust: rgba(17, 17, 27, 0.85);
     --main: #10151d;
+} */
+
+/* Catppuccin Macchiato Palette */
+
+:root {
+    --rosewater: #f4dbd6;
+    --flamingo: #f0c6c6;
+    --pink: #f5bde6;
+    --mauve: #c6a0f6;
+    --red: #ed8796;
+    --maroon: #ee99a0;
+    --peach: #f5a97f;
+    --yellow: #eed49f;
+    --green: #a6da95;
+    --teal: #8bd5ca;
+    --sky: #91d7e3;
+    --sapphire: #7dc4e4;
+    --blue: #8aadf4;
+    --lavender: #b7bdf8;
+    --text: #cad3f5;
+    --subtext1: #b8c0e0;
+    --subtext0: #a5adcb;
+    --overlay2: #939ab7;
+    --overlay1: #8087a2;
+    --overlay0: #6e738d;
+    --surface2: #5b6078;
+    --surface1: #494d64;
+    --surface0: #363a4f;
+    --base: #24273a;
+    --mantle: #1e2030;
+    --crust: #181926;
 }
+
 /* Global styles for ToolTip */
 QToolTip {
     padding: 6px;
@@ -41,8 +73,8 @@ QToolTip {
     border-radius: 6px;
 }
 * {
-    font-size: 12px;
-    color: var(--subtext0);
+    font-size: 11px;
+    color: var(--text);
     font-weight: 600;
     font-family: "JetBrainsMono NFP";
     margin: 0;
@@ -69,11 +101,11 @@ QToolTip {
 }
 .komorebi-active-layout .label {
     font-weight: 600;
-    padding: 2px 0 0 0;
+    padding: 0 0 0 0;
 }
-.apps-widget .widget-container,
-.komorebi-workspaces .widget-container,
-.komorebi-active-layout .widget-container {
+.apps-widget .widget-container
+/* .komorebi-workspaces .widget-container, */
+/* .komorebi-active-layout .widget-container */{
     background-color: var(--crust);
     margin: 3px 0 3px 0;
     border-radius: 12px;
@@ -87,7 +119,7 @@ QToolTip {
 .komorebi-workspaces {
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
-    padding: 0 4px 0 0;
+    padding: 0 0 0 0;
 }
 .komorebi-workspaces .offline-status {
     color: var(--surface2);
@@ -96,13 +128,13 @@ QToolTip {
     font-weight: 600;
 }
 .komorebi-workspaces .ws-btn {
-    border: none;
-    background-color: transparent;
-    margin: 0;
-    font-size: 12px;
-    color: var(--overlay1);
-    height: 28px;
-    width: 18px;
+    border-radius: 5px;
+    background-color: var(--surface2);
+    margin: 0 4px;
+    font-size: 1px;
+    color: transparent;
+    height: 10px;
+    width: 10px;
 }
 .komorebi-workspaces .ws-btn:hover {
     color: var(--subtext1);
@@ -118,7 +150,7 @@ QToolTip {
 }
 .komorebi-workspaces .ws-btn.active {
     color: transparent;
-    background-color: var(--red);
+    background-color: var(--mauve);
     width: 36px;
     max-width: 36px;
     height: 10px;
@@ -204,6 +236,28 @@ QToolTip {
 .microphone-widget .icon {
     color: var(--mauve);
 }
+.audio-menu {
+    background-color: var(--crust);
+}
+.audio-container .device {
+    text-align: left;
+    background-color: var(--crust);
+    border: none;
+    padding: 6px 8px 6px 4px;
+}
+.audio-container .device:hover {
+    background-color: var(--mantle);
+}
+.audio-container .device.selected {
+    background-color: var(--base);
+}
+.volume-slider::groove {
+    color: var(--lavender);
+}
+.volume-slider::handle {
+    background-color: var(--pink);
+    border-radius: 5px;
+}
 .volume-widget .icon {
     color: var(--blue);
     margin: 1px 2px 0 0;
@@ -226,9 +280,9 @@ QToolTip {
     color: #bac2db;
     background-color: rgba(24, 24, 37, 0.0);
     padding: 0px;
-    padding-left: 4px;
+    padding-left: 0px;
     padding-right: 4px;
-    font-size: 12px;
+    font-size: 11px;
 }
 .media-widget .label.maintext {
     padding-top: 3px;
@@ -264,7 +318,7 @@ QToolTip {
 }
 .home-widget {
     /* padding: 0 4px 0 12px; */
-    padding: 0 12px 0 12px;
+    padding: 0 8px 0 12px;
 }
 .home-widget .icon {
     color: var(--lavender);
