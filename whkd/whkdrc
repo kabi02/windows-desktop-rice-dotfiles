@@ -13,6 +13,7 @@ alt + b					: start brave
 # alt + return			: Start-Process pwsh
 alt + return			: Start-Process -FilePath "H:\Programs\Wezterm\wezterm-gui.exe"
 alt + f					: start $home
+alt + c 				: Start-Process -FilePath "C:\Users\Kirby\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 
 alt + q                 : komorebic close
 alt + m                 : komorebic minimize
