@@ -1,7 +1,7 @@
 # ===== WINFETCH CONFIGURATION =====
 
-$image = "C:\Users\Kirby\pix_korb.png"
-$noimage = $false
+# $image = "C:\Users\Kirby\pix_korb.png"
+# $noimage = $false
 
 # Display image using ASCII characters
 # $ascii = $true
@@ -10,7 +10,7 @@ $noimage = $false
 # $logo = "Windows 10"
 
 # Specify width for image/logo
-$imgwidth = 38
+# $imgwidth = 38
 
 # Specify minimum alpha value for image pixels to be visible
 # $alphathreshold = 50
@@ -83,6 +83,7 @@ $imgwidth = 38
 @(
     # $logo = "Hello"
     # $logo = "Kirby"
+    $logo = "Bocchi"
 
     # others
     "title"
