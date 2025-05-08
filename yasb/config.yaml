@@ -266,8 +266,8 @@ widgets:
         enabled: true
       icon_size: 16
       ignore_apps:
-        processes: []
-        titles: []
+        processes: ["Flow.Launcher.exe"]
+        titles: ["Flow.Launcher", "Flow Launcher", "^.*Flow.*$"]
         classes: []
       container_padding:
         top: 0
