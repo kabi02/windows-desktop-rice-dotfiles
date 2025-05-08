@@ -12,7 +12,8 @@ List of apps used for this rice:
 - [winfetch](https://github.com/lptstr/winfetch)
 - [cava](https://winstall.app/apps/karlstav.cava) (Terminal Audio Visualizer)
 - [PyBonsai](https://github.com/Ben-Edwards44/PyBonsai) (Procedurally Generated ASCII Art Tree)
-- [Buttery Taskbar](https://github.com/CrypticButter/ButteryTaskbar) (For semi-permanently hiding the Windows Taskbar) 
+- [Buttery Taskbar](https://github.com/CrypticButter/ButteryTaskbar) (For semi-permanently hiding the Windows Taskbar)
+- [WezTerm](https://wezterm.org/)
 
 Config files (as well as other resources used) can be found in their respective folders within the repository.
 
@@ -21,6 +22,8 @@ I used the Catppuccin (Macchiato) color scheme for most of these. The GitHub rep
 
 # Wallpapers
 I mainly use [WallHaven](https://wallhaven.cc/), [Alpha Coders](https://alphacoders.com/), and sometimes Reddit for my walls.
+
+I recently discovered [gowall](https://github.com/Achno/gowall), a CLI tool that lets you convert images to different color schemes.
 
 # Credits
 This project makes use of open-source resources. Full credit goes to the original authors.
