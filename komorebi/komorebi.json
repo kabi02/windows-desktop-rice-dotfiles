@@ -6,8 +6,8 @@
   "default_workspace_padding": 3,
   "default_container_padding": 3,
   "border": true,
-  "border_width": 3,
-  "border_offset": 0,
+  "border_width": 4,
+  "border_offset": -1,
   "mouse_follows_focus": true,
   "theme": {
     "palette": "Base16",
@@ -35,8 +35,8 @@
   "animation": 
   {
     "enabled": false,
-    "duration": 200,
-    "style": "EaseInElastic",
+    "duration": 100,
+    "style": "EaseOutQuad",
     "fps": 144
   },
 
@@ -80,6 +80,11 @@
     {
       "kind": "Exe",
       "id": "Photoshop.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Risk of Rain 2.exe",
       "matching_strategy": "Equals"
     }
   ],
