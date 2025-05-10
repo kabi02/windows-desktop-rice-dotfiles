@@ -14,6 +14,7 @@ config.window_decorations = "RESIZE"
 config.font = wezterm.font("0xProto Nerd Font Mono", { weight = "Regular" })
 config.font_size = 13.0
 config.window_background_opacity = 0.92
+config.max_fps = 144
 
 config.window_close_confirmation = 'NeverPrompt' -- Set WezTerm to never ask for confirmation when closing
 
@@ -32,5 +33,15 @@ config.default_prog = { "pwsh.exe", "-NoLogo" }
 
 config.enable_kitty_keyboard = true
 config.enable_kitty_graphics = true
+
+-- Keybinds
+
+config.keys = {
+    {
+        key = "|",
+        mods = "CTRL|SHIFT|ALT",
+        action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
+    }
+}
 
 return config
