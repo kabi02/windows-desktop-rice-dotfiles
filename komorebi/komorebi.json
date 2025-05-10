@@ -86,6 +86,11 @@
       "kind": "Exe",
       "id": "Risk of Rain 2.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Haste.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "monitors": [
