@@ -91,6 +91,11 @@
       "kind": "Exe",
       "id": "Haste.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "vlc.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "monitors": [

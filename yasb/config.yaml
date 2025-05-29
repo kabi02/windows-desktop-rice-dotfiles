@@ -48,12 +48,12 @@ bars:
         # "active_window",
         # "apps",
         # "komorebi_workspaces",
-        "taskbar"
+        # "taskbar"
       ]
       right: [
         # "taskbar",
         # "weather",
-        "cava",
+        # "cava",
         "microphone",
         "volume",
         "clock",
@@ -217,7 +217,7 @@ widgets:
         - "\uf028"
       callbacks:
         on_left: "toggle_volume_menu"
-        on_right: "exec cmd.exe /c start ms-settings:sound"
+        on_right: "toggle_mute"
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
@@ -229,7 +229,7 @@ widgets:
       callbacks:
         on_left: "toggle_mute"
         on_middle: "toggle_label"
-        on_right: "exec cmd.exe /c start ms-settings:sound"
+        on_right: "toggle_mute"
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:

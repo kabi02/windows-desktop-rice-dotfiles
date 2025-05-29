@@ -20,16 +20,16 @@ alt + m                 : komorebic minimize
 
 # Focus windows
 alt + n                 : komorebic focus left
-alt + e                 : komorebic focus up
-alt + i                 : komorebic focus down
+alt + e                 : komorebic focus down
+alt + i                 : komorebic focus up
 alt + o                 : komorebic focus right
 alt + shift + oem_4     : komorebic cycle-focus previous # oem_4 is [
 alt + shift + oem_6     : komorebic cycle-focus next # oem_6 is ]
 
 # Move windows
 alt + shift + n         : komorebic move left
-alt + shift + e         : komorebic move up
-alt + shift + i         : komorebic move down
+alt + shift + e         : komorebic move down
+alt + shift + i         : komorebic move up
 alt + shift + o         : komorebic move right
 alt + shift + return    : komorebic promote
 

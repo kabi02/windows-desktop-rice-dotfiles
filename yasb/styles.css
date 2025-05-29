@@ -117,8 +117,8 @@ QToolTip {
     margin-left: 4px;
 } */
 .komorebi-workspaces {
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
+    /* border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px; */
     padding: 0 0 0 0;
 }
 .komorebi-workspaces .offline-status {
