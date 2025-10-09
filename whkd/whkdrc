@@ -14,6 +14,7 @@ alt + b					: start brave
 alt + return			: Start-Process -FilePath "H:\Programs\Wezterm\wezterm-gui.exe"
 alt + f					: start $home
 alt + c 				: Start-Process -FilePath "C:\Users\Kirby\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+alt + s                 : Start-Process -FilePath "H:\Programs\Wezterm\wezterm-gui.exe" -ArgumentList @('start', '--', 'pwsh', '-NoExit', '-Command', 'spotify_player')
 
 alt + q                 : komorebic close
 alt + m                 : komorebic minimize
@@ -63,8 +64,8 @@ alt + shift + r         : komorebic retile
 alt + p                 : komorebic toggle-pause
 
 # Layouts
-alt + x                 : komorebic flip-layout horizontal
-alt + c                 : komorebic flip-layout vertical
+# alt + x                 : komorebic flip-layout horizontal
+# alt + c                 : komorebic flip-layout vertical
 
 # Workspaces
 alt + 1                 : komorebic focus-workspace 0
