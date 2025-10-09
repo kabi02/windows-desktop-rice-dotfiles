@@ -48,7 +48,7 @@ bars:
         # "active_window",
         # "apps",
         # "komorebi_workspaces",
-        # "taskbar"
+        "taskbar"
       ]
       right: [
         # "taskbar",
@@ -216,8 +216,8 @@ widgets:
         - "\uf027"
         - "\uf028"
       callbacks:
-        on_left: "toggle_volume_menu"
-        on_right: "toggle_mute"
+        on_left: "toggle_mute"
+        on_right: "toggle_volume_menu"
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
@@ -228,7 +228,7 @@ widgets:
         muted: "\udb80\udf6d"
       callbacks:
         on_left: "toggle_mute"
-        on_middle: "toggle_label"
+        on_middle: "exec cmd.exe /c start ms-settings:sound"
         on_right: "toggle_mute"
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
