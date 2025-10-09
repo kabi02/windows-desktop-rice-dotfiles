@@ -34,13 +34,24 @@ config.default_prog = { "pwsh.exe", "-NoLogo" }
 config.enable_kitty_keyboard = true
 config.enable_kitty_graphics = true
 
--- Keybinds
 
+-- Keybinds
 config.keys = {
     {
-        key = "|",
-        mods = "CTRL|SHIFT|ALT",
+        key = "_",
+        mods = "SHIFT|ALT",
         action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
+    },
+    {
+        key = "+",
+        mods = "SHIFT|ALT",
+        action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
+
+    },
+    {
+        key = "w",
+        mods = "CTRL",
+        action = wezterm.action.CloseCurrentPane { confirm = false },
     }
 }
 
