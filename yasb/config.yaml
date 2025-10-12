@@ -41,19 +41,12 @@ bars:
         "home",
         "komorebi_workspaces",
         "komorebi_active_layout",
-        # "glazewm_workspaces",
         "media"
       ]
       center: [
-        # "active_window",
-        # "apps",
-        # "komorebi_workspaces",
-        "taskbar"
       ]
       right: [
-        # "taskbar",
-        # "weather",
-        # "cava",
+        "systray",
         "microphone",
         "volume",
         "clock",
@@ -218,6 +211,25 @@ widgets:
       callbacks:
         on_left: "toggle_mute"
         on_right: "toggle_volume_menu"
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "▼"
+      label_expanded: "▶"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: true
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
