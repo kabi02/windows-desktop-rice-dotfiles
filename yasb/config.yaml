@@ -120,7 +120,7 @@ widgets:
       update_interval: 600
       units: "metric"
       hide_decimal: true
-      location: "Poland Wroclaw"
+      location: "Manila"
       show_alerts: true
       weather_card:
         alignment: "center"
