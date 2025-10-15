@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/emodipt-extend.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/gruvbox.omp.json' | Invoke-Expression
 
 # Yazi YAZI_FILE_ONE directory
 
@@ -15,3 +15,7 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+
+# zoxide integration
+
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
