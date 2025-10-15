@@ -1,216 +1,197 @@
-# This is default and very simple configuration file for Yasb. 
-# For more information about configuration options, please visit the Wiki https://github.com/amnweb/yasb/wiki
 watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
   start_command: "komorebic start --whkd"
-  stop_command: "komorebic stop --whkd"
-  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+  stop_command: "komorebic stop"
+  reload_command: "komorebic stop && komorebic start --whkd"
 bars:
-  primary-bar:
+  status-bar:
     enabled: true
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
       center: false
-    animation:
-      enabled: true
-      duration: 1000
     blur_effect:
       enabled: false
-      acrylic: false
+      acrylic: true
       dark_mode: false
       round_corners: false
-      round_corners_type: "normal"
-      border_color: "System"
+      border_color: None
     window_flags:
       always_on_top: false
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 32
+      height: 28
     padding:
-      top: 0
-      left: 0
+      top: 3
+      left: 3
       bottom: 0
-      right: 0
+      right: 3
     widgets:
-      left: [
-        "home",
-        "komorebi_workspaces",
-        "komorebi_active_layout",
-        "media"
-      ]
-      center: [
-      ]
-      right: [
-        "systray",
-        "microphone",
-        "volume",
-        "clock",
-        "power_menu"
-        ]
+      left: ["weather", "komorebi_workspaces", "active_window"]
+      center: ["clock"]
+      right: ["systray", "language", "media", "volume", "power_menu"]
 widgets:
-  home:
-    type: "yasb.home.HomeWidget"
+  cava:
+    type: "yasb.cava.CavaWidget"
     options:
-      # label: "<span>\udb81\udf17</span>"
-      label: "<span>\uf40e</span>"
-      menu_list:
-      - { title: "User Home", path: "~" }
-      - { title: "Download", path: "~\\Downloads" }
-      - { title: "Documents", path: "~\\Documents" }
-      - { title: "Pictures", path: "~\\Pictures" }
-      system_menu: true
-      power_menu: true
-      blur: false
+      bar_height: 12
+      framerate: 120
+      sleep_timer: 60
+      hide_empty: true
+      gradient: 0
+      foreground: "#e2cca9"
+      container_padding:
+        top: 3
+        right: 2
+        bottom: 3
+        left: 3
   media:
     type: "yasb.media.MediaWidget"
     options:
       label: "<span>\uf001</span> {title}"
       label_alt: "<span>\uf001</span> {artist}"
+      hide_empty: true
       max_field_size:
         label: 32
         label_alt: 24
       show_thumbnail: false
-      controls_only: false
-      controls_left: false
-      hide_empty: true
-      thumbnail_alpha: 150
-      thumbnail_padding: 8
-      thumbnail_corner_radius: 0
+      controls_hide: true
+      thumbnail_alpha: 50
+      thumbnail_padding: 70
+      thumbnail_corner_radius: 5
       icons:
-        # -- Defaults --
-        # prev_track: "\ue892"
-        # next_track: "\ue893"
-        # play: "\ue768"
-        # pause: "\ue769"
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      callbacks:
+        on_left: "toggle_label"
 
-        # -- Custom --
-        # prev_track: "<span>\udb81\udcae</span>"
-        # next_track: "<span>\udb81\udcad</span>"
-        # play: "<span>\uf04b</span>"
-        # pause: "<span>\uf04c</span>"
-
-        # -- Blank --
-        prev_track: ""
-        next_track: ""
-        play: ""
-        pause: ""
-        
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
-    options:
-      label: "{win[title]}"
-      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
-      label_no_window: ""
-      label_icon: false
-      label_icon_size: 14
-      max_length: 32
-      max_length_ellipsis: "..."
-      monitor_exclusive: false
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%a, %d %b %I:%M %p}"
-      label_alt: "{%A, %d %B %Y %H:%M}"
-      timezones: []
+      label: "<span>\uf017</span> {%d/%m/%y, %I:%M %p}"
+      timezones: [] #Looking up time zone info from registry
+      calendar:
+        alignment: "center"
       callbacks:
-        on_left: "toggle_label"
+        on_left: "toggle_calendar"
+        on_right: "do_nothing"
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 16
+      animation: true
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      label_offline: "\u23fc Offline"
+      label_offline: "\u26a1 Offline"
       label_workspace_btn: "\udb81\udc3d"
-      label_workspace_active_btn: ""
+      label_workspace_active_btn: "\udb81\udc3e"
       label_workspace_populated_btn: "\udb81\udc3e"
       label_default_name: "{index}"
-      label_zero_index: false
+      label_zero_index: true
       hide_empty_workspaces: false
       hide_if_offline: true
       animation: true
       container_padding:
         top: 0
-        left: 8
+        left: 0
         bottom: 0
-        right: 8
-  komorebi_active_layout:
-    type: "komorebi.active_layout.ActiveLayoutWidget"
-    options:
-      hide_if_offline: false
-      label: "{icon}"
-      layouts:
-        [
-          "bsp",
-          "columns",
-          "rows",
-          "grid",
-          "vertical_stack",
-          "horizontal_stack",
-          "ultrawide_vertical_stack",
-          "right_main_vertical_stack",
-        ]
-      layout_icons:
-        bsp: "[\\\\]"
-        columns: "[||]"
-        rows: "[==]"
-        grid: "[G]"
-        vertical_stack: "[V]="
-        horizontal_stack: "[H]="
-        ultrawide_vertical_stack: "||="
-        right_main_vertical_stack: "=[V]"
-        monocle: "[M]"
-        maximised: "[X]"
-        floating: "><>"
-        paused: "[P]"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
-      callbacks:
-        on_left: "next_layout"
-        on_middle: "toggle_monocle"
-        on_right: "prev_layout"
+        right: 0
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
-      label: "<span>{icon}</span> {temp}"
-      label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
+      label: "<span>{icon}</span> {conditions} {temp} \u00b7 \u2193 {min_temp} \u2191 {max_temp} \u00b7 {precip}"
       api_key: "3bf4cf9a7c3f40d6b31174128242807"
       update_interval: 600
+      units: "metric"
       hide_decimal: true
-      location: "USA Los Angeles 90006"
+      location: "Poland Wroclaw"
+      show_alerts: true
+      weather_card:
+        alignment: "center"
+        offset_left: 150
       callbacks:
-        on_left: "toggle_label"
+        on_left: "toggle_card"
       icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\udb81\udd99"
+        sunnyDay: "\ue30d"
+        clearNight: "\ue32b"
         cloudyDay: "\udb81\udd99"
-        cloudyNight: "\udb81\udd99"
-        rainyDay: "\udb81\udd99"
-        rainyNight: "\udb81\udd99"
-        snowyIcyDay: "\udb81\udd99"
-        snowyIcyNight: "\udb81\udd99"
-        blizzard: "\udb81\udd99"
-        default: "\udb81\udd99"
+        cloudyNight: "\ue311"
+        rainyDay: "\udb81\ude7e"
+        rainyNight: "\udb81\ude7e"
+        snowyIcyDay: "\udb81\udd98"
+        snowyIcyNight: "\udb81\udd98"
+        blizzardDay: "\uebaa"
+        default: "\uebaa"
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
-      tooltip: false
       volume_icons:
-        - "\ueee8"
-        - "\uf026"
-        - "\uf027"
-        - "\uf027"
-        - "\uf028"
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
       callbacks:
-        on_left: "toggle_mute"
-        on_right: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+        on_middle: "toggle_mute"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: False
+      blur: False
+      blur_background: True
+      animation_duration: 100 # Milisecond
+      button_row: 4 # Number of buttons in row, min 1 max 5
+      buttons:
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        signout: ["\udb80\udf43", "Sign out"]
+        sleep: ["\u23fe", "Sleep"]
+        cancel: ["", "Cancel"]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[process][name]}"
+      label_alt: ""
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 14
+      max_length: 40
+      max_length_ellipsis: "..."
+      monitor_exclusive: false
+      callbacks:
+        on_left: "do_nothing"
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "<span>\uf11c</span> {lang[language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      container_padding:
+        bottom: 1
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -226,100 +207,7 @@ widgets:
       show_volume: false
       show_network: false
       btn_shadow:
-        enabled: true
+        enabled: false
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
-  microphone:
-    type: "yasb.microphone.MicrophoneWidget"
-    options:
-      label: "<span>{icon}</span> {level}"
-      label_alt: "<span>{icon}</span> {level}%"
-      icons:
-        normal: "\udb80\udf6c"
-        muted: "\udb80\udf6d"
-      callbacks:
-        on_left: "toggle_mute"
-        on_middle: "exec cmd.exe /c start ms-settings:sound"
-        on_right: "toggle_mute"
-  power_menu:
-    type: "yasb.power_menu.PowerMenuWidget"
-    options:
-      label: "\uf011"
-      uptime: True
-      blur: False
-      blur_background: True
-      animation_duration: 200
-      button_row: 5
-      buttons:
-        shutdown: ["\uf011", "Shut Down"]
-        restart: ["\uead2", "Restart"]
-        signout: ["\udb80\udf43", "Sign out"]
-        hibernate: ["\uf28e", "Hibernate"]
-        sleep: ["\u23fe", "Sleep"]
-        cancel: ["", "Cancel"]
-  apps:
-    type: "yasb.applications.ApplicationsWidget"
-    options:
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8
-      label: "{data}"
-      app_list:
-        - { icon: "\uf422", launch: "search" }
-        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\udb80\ude39",launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" }
-  taskbar:
-    type: "yasb.taskbar.TaskbarWidget"
-    options:
-      animation: 
-        enabled: true
-      icon_size: 16
-      ignore_apps:
-        processes: ["Flow.Launcher.exe"]
-        titles: ["Flow.Launcher", "Flow Launcher", "^.*Flow.*$"]
-        classes: []
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      tooltip: True
-  cava:
-    type: "yasb.cava.CavaWidget"
-    options:
-      bar_height: 12
-      min_bar_height: 0
-      gradient: 1
-      reverse: 0
-      # foreground: "#f5bde6"
-      # foreground: "#89b4fa"
-      gradient_color_1: '#74c7ec'
-      gradient_color_2: '#89b4fa'
-      gradient_color_3: '#cba6f7'
-      bars_number: 8
-      bar_spacing: 2
-      bar_width: 4
-      sleep_timer: 2
-      hide_empty: false
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-  glazewm_workspaces:
-    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
-    options:
-      offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: true
-      hide_if_offline: false
-
-      # By default workspace names are fetched from GlazeWM and "display_name" option takes priority over "name".
-      # However, you can customize populated and empty labels here using {name} and {display_name} placeholders if needed.
-      # {name} will be replaced with workspace name (index) from GlazeWM.
-      # {display_name} will be replaced with workspace display_name from GlazeWM.
-
-      # populated_label: "{name} {display_name} \uebb4"
-      # empty_label: "{name} {display_name} \uebb5"
