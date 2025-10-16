@@ -9,7 +9,7 @@
 # The apps will be focused if open, or launched if not open
 # alt + f                 : if ($wshell.AppActivate('Brave') -eq $False) { start brave }
 # alt + b                 : if ($wshell.AppActivate('Microsoft Edge') -eq $False) { start msedge }
-alt + b					: start brave
+alt + b					: start zen
 # alt + return			: Start-Process pwsh
 alt + return			: Start-Process -FilePath "H:\Programs\Wezterm\wezterm-gui.exe"
 alt + f					: start $home
