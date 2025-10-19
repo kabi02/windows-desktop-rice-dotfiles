@@ -171,6 +171,10 @@ widgets:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
       label: "{win[process][name]}"
+      rewrite:
+        - pattern: "^(.*)$"
+          replacement: "\\1"
+          case: lower
       label_alt: ""
       label_no_window: ""
       label_icon: true
